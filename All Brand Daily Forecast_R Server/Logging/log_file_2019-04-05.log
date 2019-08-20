@@ -1,0 +1,340 @@
+
+2019-04-05 10:18:26 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Loading required package: RJDBC
+Loading required package: DBI
+Loading required package: rJava
+-------------------------------------------------------------------------------
+ 2019-04-05 10:18:56 > HISTORICAL DATA UPDATE PROCESS ENDS 
+
+
+2019-04-05 10:23:00 > MASTER PROCESS STARTS
+-------------------------------------------------------------------------------
+sourcing:  ./R Scripts/Utility Functions/calculateRMSE_MAPE.R 
+sourcing:  ./R Scripts/Utility Functions/createHolidayEffectRange.R 
+sourcing:  ./R Scripts/Utility Functions/generateHolidayDates_v02262019.R 
+Loading required package: RJDBC
+Loading required package: DBI
+Loading required package: rJava
+Loading required package: zoo
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Loading required package: dplyr
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Begin forecasting for People Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for People 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Allrecipes Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Allrecipes 
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+ 2019-04-05 10:24:32 > MASTER PROCESS ENDS 
+
+
+> sink(con_log, append=TRUE, type="message")
+
+> #### Wrap the whole master script into a try() clause so that we will still close the connection to the log file
+> #### regardless of whether the sc .... [TRUNCATED] 
+
+2019-04-05 15:08:27 > MASTER FORECAST PROCESS STARTS
+-------------------------------------------------------------------------------
+sourcing:  ./R Scripts/Utility Functions/calculateRMSE_MAPE.R 
+sourcing:  ./R Scripts/Utility Functions/createHolidayEffectRange.R 
+sourcing:  ./R Scripts/Utility Functions/generateHolidayDates_v02262019.R 
+Loading required package: RJDBC
+Warning: package ‘RJDBC’ was built under R version 3.5.3
+Loading required package: DBI
+Warning: package ‘DBI’ was built under R version 3.5.3
+Loading required package: rJava
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Begin forecasting for Parents Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Parents 
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+ 2019-04-05 15:08:45 > MASTER PROCESS ENDS 
+
+
+> ########################################### ERROR LOGGING STOPS ###########################################
+> # Revert logging output back to the co .... [TRUNCATED] 
+
+> sink()
+
+2019-04-05 15:44:05 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Loading required package: RJDBC
+Loading required package: DBI
+Loading required package: rJava
+-------------------------------------------------------------------------------
+ 2019-04-05 15:44:28 > HISTORICAL DATA UPDATE PROCESS ENDS 
+
+
+2019-04-05 15:51:56 > MASTER FORECAST PROCESS STARTS
+-------------------------------------------------------------------------------
+sourcing:  ./R Scripts/Utility Functions/calculateRMSE_MAPE.R 
+sourcing:  ./R Scripts/Utility Functions/createHolidayEffectRange.R 
+sourcing:  ./R Scripts/Utility Functions/generateHolidayDates_v02262019.R 
+Loading required package: RJDBC
+Loading required package: DBI
+Loading required package: rJava
+Loading required package: zoo
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Loading required package: dplyr
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Begin forecasting for Martha Stewart Living Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Martha Stewart Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Departures Visits 
+
+Disabling yearly seasonality. Run prophet with yearly.seasonality=TRUE to override this.
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Departures 
+-------------------------------------------------------------------------------
+
+Begin forecasting for All People Quilt Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for All People Quilt 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Living the Country Life Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Living the Country Life 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Southern Living Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Southern Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Coastal Living Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Coastal Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Extra Crispy Visits 
+
+Disabling yearly seasonality. Run prophet with yearly.seasonality=TRUE to override this.
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Extra Crispy 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Shape Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Shape 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Real Simple Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Real Simple 
+-------------------------------------------------------------------------------
+
+Begin forecasting for HelloGiggles Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for HelloGiggles 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Cooking Light Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Cooking Light 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Dinner Spinner Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Dinner Spinner 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Traditional Home Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Traditional Home 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Better Homes and Garden Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Better Homes and Garden 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Parenting Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Parenting 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Parents Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Parents 
+-------------------------------------------------------------------------------
+
+Begin forecasting for People Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for People 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Entertainment Weekly Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Entertainment Weekly 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Wood Magazine Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Wood Magazine 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Travel & Leisure Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+Warning in .local(object, ...) : non-zero return code in optimizing
+End forecasting for Travel & Leisure 
+-------------------------------------------------------------------------------
+
+Begin forecasting for MyRecipes Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for MyRecipes 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Midwest Living Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Midwest Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for InStyle Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for InStyle 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Food & Wine Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Food & Wine 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Martha Stewart Weddings Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Martha Stewart Weddings 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Family Circle Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Family Circle 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Eating Well Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Eating Well 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Allrecipes Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Allrecipes 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Rachael Ray Visits 
+
+Disabling yearly seasonality. Run prophet with yearly.seasonality=TRUE to override this.
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Rachael Ray 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Health Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Health 
+-------------------------------------------------------------------------------
+
+Begin forecasting for People En Espanol Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for People En Espanol 
+-------------------------------------------------------------------------------
+
+Begin forecasting for More (DC) Visits 
+
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for More (DC) 
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+ 2019-04-05 15:59:21 > MASTER FORECAST PROCESS ENDS 
+

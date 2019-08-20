@@ -1,0 +1,5 @@
+
+2019-04-12 12:27:37 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Error in .jfindClass(as.character(driverClass)[1]) : 
+  java.lang.NoClassDefFoundError: Could not initialize class net.snowflake.client.jdbc.SnowflakeDriver

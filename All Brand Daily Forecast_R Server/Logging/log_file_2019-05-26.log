@@ -1,0 +1,10 @@
+
+2019-05-26 00:00:01 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Loading required package: RJDBC
+Loading required package: methods
+Loading required package: DBI
+Loading required package: rJava
+-------------------------------------------------------------------------------
+ 2019-05-26 00:00:11 > HISTORICAL DATA UPDATE PROCESS ENDS 
+

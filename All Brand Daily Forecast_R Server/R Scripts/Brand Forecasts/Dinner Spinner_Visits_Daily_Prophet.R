@@ -1,0 +1,133 @@
+#### Install the neccessary packages if not available yet
+if (("prophet" %in% rownames(installed.packages())) == FALSE) install.packages("prophet")
+if (("forecast" %in% rownames(installed.packages())) == FALSE) install.packages("forecast")
+if (("lubridate" %in% rownames(installed.packages())) == FALSE) install.packages("lubridate")
+
+suppressMessages(library(prophet))
+suppressMessages(library(forecast))
+
+############################################## INPUT #################################################
+
+#### We expect the following variables passed in from the master script
+
+# brand_name - the name of the brand
+
+# brand_data - historical data frame with two columns (ds, y) for date and the forecasted metric
+
+# metric - the name of the forecasted metric
+
+# actual_end - the last date of the historical data
+
+# fc_periods - the numbers of days we want to forecast ahead
+
+# predicts - the data frame that collects the forecast results from the forecast scripts for each 
+#            brand.
+
+######################################## GET TRAINING DATA ############################################
+train.raw <- brand_data[brand_data$ds <= actual_end,]
+
+train <- train.raw
+
+# Log transform to keep the daily variance constant
+train$y <- log(train$y)
+
+############################### BUILD THE HOLIDAY DATA FRAME - IF ANY #################################
+suppressMessages(require(lubridate))
+
+dateframe <- generateHolidayDates(start_date = min(brand_data$ds), end_date = actual_end+days(fc_periods))
+
+#--- Specify the significant holidays here
+holiday_names = c('LaborDay', 'NewYear', 'Valentine', 'July4th', 'Easter', 'Christmas', 'Thanksgiving')
+
+# #---- Validate Holiday Impact - Add the holiday information to the historical data
+# test.actuals <- brand_data[brand_data$ds > actual_end,]
+# train_test = rbind(train, test.actuals)
+# data_with_holidays <- cbind(train_test
+#                             , subset(dateframe, date <= max(brand_data$ds) & date >= as.Date('2016-07-01'), select = holiday_names))
+# 
+# write.csv(data_with_holidays, 'data_with_holidays.csv', row.names = FALSE)
+# 
+# View(subset(holidays, month(ds) == c(12)))
+
+# Create an empty data frame to store the holiday windows
+holidays = data.frame(holiday = character()
+                      , ds = as.Date(character())
+                      , lower_window = integer()
+                      , upper_window = integer()
+                      , stringsAsFactors = FALSE)
+
+# Generate the holiday dates for the specified holidays
+for (h in holiday_names) {
+    dates = dateframe[dateframe[h] == 1,'date'] #dates of the specified holiday
+    rows = nrow(dates)
+    holiday = data.frame(holiday = h
+                         , ds = dates
+                         , lower_window = -2
+                         , upper_window = 3
+                         , stringsAsFactors = FALSE)
+    holidays = rbind(holidays, holiday)
+}
+
+# #--- Now treat the special cases
+
+# LaborDay window is 0
+len = nrow(holidays[holidays$holiday == 'LaborDay',])
+holidays[holidays$holiday == 'LaborDay', c('lower_window', 'upper_window')] = rep(c(0, 0), each = len)
+
+# NewYear window is 7 days before that
+len = nrow(holidays[holidays$holiday == 'NewYear',])
+holidays[holidays$holiday == 'NewYear', c('lower_window', 'upper_window')] = rep(c(-7, 0), each = len)
+
+# Valentine window is 2 days before
+len = nrow(holidays[holidays$holiday == 'Valentine',])
+holidays[holidays$holiday == 'Valentine', c('lower_window', 'upper_window')] = rep(c(-2, 0), each = len)
+
+# July4th window is 1 days before
+len = nrow(holidays[holidays$holiday == 'July4th',])
+holidays[holidays$holiday == 'July4th', c('lower_window', 'upper_window')] = rep(c(-1, 0), each = len)
+
+# Easter window is 7 days before
+len = nrow(holidays[holidays$holiday == 'Easter',])
+holidays[holidays$holiday == 'Easter', c('lower_window', 'upper_window')] = rep(c(-7, 0), each = len)
+
+# Christmas window is 7 days before
+len = nrow(holidays[holidays$holiday == 'Christmas',])
+holidays[holidays$holiday == 'Christmas', c('lower_window', 'upper_window')] = rep(c(-7, 0), each = len)
+
+# Thanksgiving window is a week before the holiday date
+len = nrow(holidays[holidays$holiday == 'Thanksgiving',])
+holidays[holidays$holiday == 'Thanksgiving', c('lower_window', 'upper_window')] = rep(c(-7, 0), each = len)
+
+# View(holidays)
+
+########################################### MODELLING #################################################
+fit.prophet <- prophet(train
+                       , holidays = holidays
+                       , growth = 'linear'
+                       , yearly.seasonality = TRUE
+                       , changepoint.prior.scale = 100
+                       , changepoints = '2015-07-01'
+                      )
+
+########################################## PREDICTING #################################################
+
+future <- make_future_dataframe(fit.prophet, fc_periods)
+
+forecast <- predict(fit.prophet, future)
+
+# Convert the predictions back to base10
+forecast$yhat <- exp(forecast$yhat)
+
+############################ PASSING RESULTS BACK TO MASTER SCRIPT ####################################
+
+#### Put the predicts (both historical and forecast periods) into the data frame "predicts"
+brand_predicts <- data.frame(brand = brand_name
+                             , activity_date = as.Date(forecast$ds)
+                             , metric = metric
+                             , pred = forecast$yhat
+                             , stringsAsFactors = FALSE)
+predicts <- rbind(predicts, brand_predicts)
+
+# The double arrow is to pass the local predict values to the global predict values
+# in the master script
+predicts <<- predicts

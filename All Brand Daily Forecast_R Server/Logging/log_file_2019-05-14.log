@@ -1,0 +1,28 @@
+
+2019-05-14 00:00:01 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Loading required package: RJDBC
+Loading required package: methods
+Loading required package: DBI
+Loading required package: rJava
+Error in .verify.JDBC.result(r, "Unable to retrieve JDBC result set for ",  : 
+  Unable to retrieve JDBC result set for Select Min(brand_max_date) update_date
+                                           From (Select brand, Max(activity_date) brand_max_date
+                                                 From sandbox.public.dsa_historical_data
+                                                 Group By brand) max_date_by_brand
+                                       (SQL compilation error:
+Object 'SANDBOX.PUBLIC.DSA_HISTORICAL_DATA' does not exist.)
+
+2019-05-14 00:00:04 > MASTER FORECAST PROCESS STARTS
+-------------------------------------------------------------------------------
+sourcing:  ./R Scripts/Utility Functions/calculateRMSE_MAPE.R 
+sourcing:  ./R Scripts/Utility Functions/createHolidayEffectRange.R 
+sourcing:  ./R Scripts/Utility Functions/generateHolidayDates_v02262019.R 
+Loading required package: RJDBC
+Loading required package: methods
+Loading required package: DBI
+Loading required package: rJava
+Error in .verify.JDBC.result(r, "Unable to retrieve JDBC result set for ",  : 
+  Unable to retrieve JDBC result set for Select * From sandbox.public.dsa_historical_data
+                            (SQL compilation error:
+Object 'SANDBOX.PUBLIC.DSA_HISTORICAL_DATA' does not exist.)

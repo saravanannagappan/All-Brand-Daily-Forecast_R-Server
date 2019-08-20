@@ -1,0 +1,272 @@
+
+2019-05-01 00:00:02 > HISTORICAL DATA UPDATE PROCESS STARTS
+-------------------------------------------------------------------------------
+Loading required package: RJDBC
+Loading required package: methods
+Loading required package: DBI
+Loading required package: rJava
+-------------------------------------------------------------------------------
+ 2019-05-01 00:00:08 > HISTORICAL DATA UPDATE PROCESS ENDS 
+
+
+2019-05-01 00:00:08 > MASTER FORECAST PROCESS STARTS
+-------------------------------------------------------------------------------
+sourcing:  ./R Scripts/Utility Functions/calculateRMSE_MAPE.R 
+sourcing:  ./R Scripts/Utility Functions/createHolidayEffectRange.R 
+sourcing:  ./R Scripts/Utility Functions/generateHolidayDates_v02262019.R 
+Loading required package: RJDBC
+Loading required package: methods
+Loading required package: DBI
+Loading required package: rJava
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Begin forecasting for All People Quilt Visits 
+
+./R Scripts/Brand Forecasts/All People Quilt_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for All People Quilt 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Shape Visits 
+
+./R Scripts/Brand Forecasts/Shape_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Shape 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Better Homes and Garden Visits 
+
+./R Scripts/Brand Forecasts/Better Homes and Garden_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Better Homes and Garden 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Southern Living Visits 
+
+./R Scripts/Brand Forecasts/Southern Living_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Southern Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Dinner Spinner Visits 
+
+./R Scripts/Brand Forecasts/Dinner Spinner_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Dinner Spinner 
+-------------------------------------------------------------------------------
+
+Begin forecasting for HelloGiggles Visits 
+
+./R Scripts/Brand Forecasts/HelloGiggles_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for HelloGiggles 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Wood Magazine Visits 
+
+./R Scripts/Brand Forecasts/Wood Magazine_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Wood Magazine 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Parenting Visits 
+
+./R Scripts/Brand Forecasts/Parenting_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Parenting 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Coastal Living Visits 
+
+./R Scripts/Brand Forecasts/Coastal Living_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Coastal Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Cooking Light Visits 
+
+./R Scripts/Brand Forecasts/Cooking Light_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Cooking Light 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Entertainment Weekly Visits 
+
+./R Scripts/Brand Forecasts/Entertainment Weekly_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Entertainment Weekly 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Food & Wine Visits 
+
+./R Scripts/Brand Forecasts/Food & Wine_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Food & Wine 
+-------------------------------------------------------------------------------
+
+Begin forecasting for People En Espanol Visits 
+
+./R Scripts/Brand Forecasts/People En Espanol_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for People En Espanol 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Allrecipes Visits 
+
+./R Scripts/Brand Forecasts/Allrecipes_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Allrecipes 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Eating Well Visits 
+
+./R Scripts/Brand Forecasts/Eating Well_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Eating Well 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Rachael Ray Visits 
+
+./R Scripts/Brand Forecasts/Rachael Ray_Visits_Daily_Prophet.R
+Disabling yearly seasonality. Run prophet with yearly.seasonality=TRUE to override this.
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Rachael Ray 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Traditional Home Visits 
+
+./R Scripts/Brand Forecasts/Traditional Home_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Traditional Home 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Family Circle Visits 
+
+./R Scripts/Brand Forecasts/Family Circle_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Family Circle 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Martha Stewart Living Visits 
+
+./R Scripts/Brand Forecasts/Martha Stewart Living_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Martha Stewart Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Departures Visits 
+
+./R Scripts/Brand Forecasts/Departures_Visits_Daily_Prophet.R
+Disabling yearly seasonality. Run prophet with yearly.seasonality=TRUE to override this.
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Departures 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Living the Country Life Visits 
+
+./R Scripts/Brand Forecasts/Living the Country Life_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Living the Country Life 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Extra Crispy Visits 
+
+./R Scripts/Brand Forecasts/Extra Crispy_Visits_Daily_Prophet.R
+Forecasting for Extra Crispy Visits was NOT SUCCESSFUL. Details:
+
+Error in `[<-.data.frame`(`*tmp*`, train.raw$y < 4000, "y", value = NA): missing values are not allowed in subscripted assignments of data frames
+
+End forecasting for Extra Crispy 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Real Simple Visits 
+
+./R Scripts/Brand Forecasts/Real Simple_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Real Simple 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Parents Visits 
+
+./R Scripts/Brand Forecasts/Parents_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Parents 
+-------------------------------------------------------------------------------
+
+Begin forecasting for People Visits 
+
+./R Scripts/Brand Forecasts/People_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for People 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Travel & Leisure Visits 
+
+./R Scripts/Brand Forecasts/Travel & Leisure_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Travel & Leisure 
+-------------------------------------------------------------------------------
+
+Begin forecasting for MyRecipes Visits 
+
+./R Scripts/Brand Forecasts/MyRecipes_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for MyRecipes 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Midwest Living Visits 
+
+./R Scripts/Brand Forecasts/Midwest Living_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Midwest Living 
+-------------------------------------------------------------------------------
+
+Begin forecasting for InStyle Visits 
+
+./R Scripts/Brand Forecasts/InStyle_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for InStyle 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Martha Stewart Weddings Visits 
+
+./R Scripts/Brand Forecasts/Martha Stewart Weddings_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Martha Stewart Weddings 
+-------------------------------------------------------------------------------
+
+Begin forecasting for Health Visits 
+
+./R Scripts/Brand Forecasts/Health_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for Health 
+-------------------------------------------------------------------------------
+
+Begin forecasting for More (DC) Visits 
+
+./R Scripts/Brand Forecasts/More (DC)_Visits_Daily_Prophet.R
+Disabling daily seasonality. Run prophet with daily.seasonality=TRUE to override this.
+End forecasting for More (DC) 
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+ 2019-05-01 00:04:30 > MASTER FORECAST PROCESS ENDS 
+
